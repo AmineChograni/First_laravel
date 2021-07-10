@@ -3,7 +3,14 @@
 @section('content')
     <h1>{{$post->title}}</h1>
     <p>{{$post->content}}</p>
-    <em>{{$post->created_at}}</em>
+    <em>{{$post->created_at->diffForHumans()}}</em><br>
     
-    <span>{{$post->active}}</span>
+    <p>Status:
+        @if($post->active)
+            Enabled
+        @else
+            Disabled
+        @endif
+    </p>
+
 @endsection

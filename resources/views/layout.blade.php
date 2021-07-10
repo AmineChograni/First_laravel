@@ -7,10 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+
+    @if(session()->has('status'))
+        <h3 style="color: green">
+            {{session()->get('status')}}
+        </h3>
+    @endif
+
     <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/about">about</a></li>
-        <li><a href="/posts/1/amine">Blog</a></li>
+        <li><a href="{{route('Home')}}">Home</a></li>
+        <li><a href="{{route('About')}}">About</a></li>
+        <li><a href="{{route('posts.create')}}">New post</a></li>
     </ul>
     @yield('content')
 </body>

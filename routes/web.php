@@ -20,4 +20,4 @@ Route::get('/home',[HomeController::class,'home'])->name('Home');
 
 Route::get('/about',[HomeController::class,'about'])->name('About');
 
-Route::resource('/posts',PostController::class)->only('index','show');
+Route::resource('/posts',PostController::class)->only('index','show','create','store');
