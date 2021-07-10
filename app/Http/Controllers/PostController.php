@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePost;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Str;
@@ -40,8 +41,9 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store(Request $request)
+    public function store(StorePost $request)
     {
+
         $post = new Post();
 
         $post->title=$request->input('title');
